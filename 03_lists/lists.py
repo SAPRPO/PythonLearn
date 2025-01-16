@@ -54,3 +54,46 @@ print(cars)
 # 
 guests=['Сергей', 'Александр', 'Алена', 'Андрей']
 print(guests)
+invitation="Приглашаю на праздник!"
+
+invitation_mes0= f"{guests[0]}, {invitation}"
+invitation_mes1= f"{guests[1]}, {invitation}"
+invitation_mes2= f"{guests[2]}, {invitation}"
+invitation_mes3= f"{guests[3]}, {invitation}"
+
+print(invitation_mes0)
+print(invitation_mes1)
+print(invitation_mes2)
+print(invitation_mes3)
+
+lost=guests[1]
+guests.remove(lost)
+print(lost)
+print(guests)
+guests.insert(0, 'Леха')
+print(guests)
+print("New Invitarion list")
+print(invitation_mes0)
+print(invitation_mes1)
+print(invitation_mes2)
+print(invitation_mes3)
+
+print("I founded large table!")
+
+guests.append('Екатерина')
+guests.insert(0, 'Ксения')
+guests.insert(3, 'Николай')
+print(guests)
+
+#short list
+print("ShortList")
+print(f"Sorry {guests.pop()} I can't invite you!")
+print(f"Sorry {guests.pop()} I can't invite you!")
+print(f"Sorry {guests.pop()} I can't invite you!")
+print(f"Sorry {guests.pop()} I can't invite you!")
+print(f"Sorry {guests.pop()} I can't invite you!")
+print(guests)
+del guests[1]
+del guests[0]
+
+print(guests)
