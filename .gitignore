@@ -170,3 +170,5 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 /.vs/PythonLearn/FileContentIndex/bb68559f-460f-4392-a24e-615bafb41abf.vsidx
+/.vs/PythonLearn/FileContentIndex/9f61debc-c2b4-40e6-969d-726c27232806.vsidx
+/.vs/slnx.sqlite
