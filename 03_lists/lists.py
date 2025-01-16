@@ -52,4 +52,5 @@ print(cars)
 #3.4
 # guests
 
-guests=[]
+guests=['Сергей', 'Александр', 'Алена', 'Андрей']
+print(guests)
