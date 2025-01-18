@@ -83,7 +83,7 @@ print("I founded large table!")
 guests.append('Екатерина')
 guests.insert(0, 'Ксения')
 guests.insert(3, 'Николай')
-print(guests)
+print(f"{guests}, \nКоличество гостей = {len(guests)} ")
 
 #short list
 print("ShortList")
