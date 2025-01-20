@@ -39,4 +39,7 @@ print(f"citylist has {length} elements")
 ##remove by value
 citylist.remove('Penza') 
 print(citylist)
+#last element
+print(citylist[-1])
+
 
