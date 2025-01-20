@@ -41,5 +41,3 @@ citylist.remove('Penza')
 print(citylist)
 #last element
 print(citylist[-1])
-
-
