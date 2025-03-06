@@ -1,0 +1,15 @@
+toppings = []
+
+while True:
+    topping = input("Enter a topping (or 'quit' to finish): ")
+    if topping.lower() == 'quit':
+        break
+    else:
+        toppings.append(topping)
+        print(f"You've added {topping} to your pizza.")
+
+print("Your pizza toppings are:")
+count = 1
+for topping in toppings:    
+    print(f"{count}. {topping}")
+    count += 1
