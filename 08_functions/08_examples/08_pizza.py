@@ -22,3 +22,4 @@ def make_pizza(size, *toppings):
 size = int(input("What size pizza do you want? "))
 make_pizza(size, 'pepperoni',)
 make_pizza(12, 'pepperoni', 'green peppers', 'extra cheese')
+
