@@ -23,6 +23,19 @@ class Restaurant:
         #else:
         #    print(f"Error! Number of visitors can't be less then served in day")
 
+class IceCreamStand(Restaurant):
+    def __init__(self, restaurant_name, cuisine_type, flavours):
+          super().__init__(restaurant_name, cuisine_type)
+          self.flavours =flavours
+    
+    def showFlavour(self):
+         print(f"Your ingredients: ")
+         for f in self.flavours:
+              print(f)
+
+
+
+
 my_restaurant = Restaurant("Pizza Hut", "Pizza")
 
 my_restaurant.describe_restaurant()
@@ -36,3 +49,8 @@ print(served)
 restaurant.set_number_served(20)
 
 restaurant.increment_number_served(10)
+
+
+#IceCreamStand
+ice = IceCreamStand('Baskin Robins', 'Ice cream', ['cherry', 'strawberry', 'apple'])
+ice.showFlavour()
