@@ -1,5 +1,6 @@
-age = 14
+#age = 14
 
+age = int(input("Введите возраст: "))
 if age < 2:
     print("младенец")
 elif age < 4:
