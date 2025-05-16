@@ -36,7 +36,7 @@ class Battery:
             
         elif self.battery_size == 65:
             range = 225
-        #return range 
+        #return range (ОТдельно вывести через print)
         print(f"This car can go about {range} miles on a full charge")   
 
     def upgrade_battery(self):
