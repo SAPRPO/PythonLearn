@@ -51,7 +51,7 @@ class ElectricCar(Car):
         #attributes of ElectricCar
         #self.battery_size=40
         self.battery = Battery()
-
+#test2
     def describe_battery(self):
         print(f"This car has a {self.battery_size}-kWh battery.")
 
