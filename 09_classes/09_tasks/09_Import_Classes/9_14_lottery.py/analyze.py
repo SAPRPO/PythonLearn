@@ -3,7 +3,7 @@ from lottery import list, ticket_combination
 print(list)
 winner_ticket = ticket_combination()
 #print(winner_ticket)
-
+#compare every symbol?
 count = 1
 while(True):
     play_result = ticket_combination()
