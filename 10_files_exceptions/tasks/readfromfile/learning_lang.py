@@ -4,7 +4,7 @@ relative_filepath = '10_files_exceptions/tasks/readfromfile'
 path = Path(f"{relative_filepath}/learning_python.txt")
 
 print("--------10.1-----------")
-contents = path.read_text()
+contents = path.read_text(encoding='utf-8')
 print(contents)
 print("--------10.1 part 2-----------")
 

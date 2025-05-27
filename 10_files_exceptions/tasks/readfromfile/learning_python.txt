@@ -3,3 +3,4 @@ In Python, you can use functions to organize code and reuse logic in different p
 In Python, you can work with libraries such as NumPy and Pandas to perform complex mathematical calculations and data analysis.
 In Python, you can handle exceptions using the try-except construct, which helps avoid program crashes.
 In Python, you can create classes and objects, which supports object-oriented programming.
+Введите имя пользователя или адрес электронной почты: Введите имя пользователя GitHub или адрес электронной почты человека, которого вы хотите пригласить.
