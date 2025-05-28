@@ -5,7 +5,7 @@ print("----------10.4---------")
 guest = input("What is your name: ")
 path = Path(f"{relative_filepath}guest.txt")
 path.write_text(guest)
-#10.5 test
+#10.5 test2
 print("----------10.5---------")
 path = Path(f"{relative_filepath}guest_book.txt")
 count = 0
