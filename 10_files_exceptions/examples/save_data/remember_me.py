@@ -9,4 +9,4 @@ path = Path(f"{relative_filepath}username.json")
 contents = json.dumps(user_name)
 path.write_text(contents)
 
-print(f"We will remeber you, {user_name}, whern you come back!")
+print(f"We will remeber you, {user_name}, when you come back!")
