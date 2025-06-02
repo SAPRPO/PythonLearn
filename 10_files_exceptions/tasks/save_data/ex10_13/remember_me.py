@@ -27,7 +27,7 @@ def write_user_info(path):
     #print(user_info)
     contents = json.dumps(user_info)
     path.write_text(contents)
-    return username
+    return user_info
 
 def user_name():
    # user_name= input("What is your name? ")
@@ -63,6 +63,6 @@ def greet_user():
     else:
         userinfo = write_user_info(path)
         user_info_output = format_output(userinfo)
-        print(f'We will remember you:\n {user_info_output}')
+        print(f'We will remember you:\n{user_info_output}')
 
 greet_user()
