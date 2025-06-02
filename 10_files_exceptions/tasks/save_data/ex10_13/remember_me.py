@@ -58,7 +58,7 @@ def greet_user():
     userinfo = get_user_info(path)
     if userinfo:
         user_info_output = format_output(userinfo)
-        print(f"User name info:\n{user_info_output}!")
+        print(f"User name info:\n{user_info_output}")
         
     else:
         userinfo = write_user_info(path)
