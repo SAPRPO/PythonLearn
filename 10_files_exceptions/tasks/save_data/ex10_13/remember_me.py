@@ -24,7 +24,7 @@ def write_user_info(path):
         'userage' : userage,
         'usercity' : usercity,
     }
-    print(user_info)
+    #print(user_info)
     contents = json.dumps(user_info)
     path.write_text(contents)
     return username
