@@ -1,8 +1,12 @@
 import matplotlib.pyplot as plt
 #построение по точкам
-plt.style.use('seaborn')
+#добавление точек
+x_values = [1,2,3,4,5]
+y_values = [1,4,9,16,25]
+
+plt.style.use('ggplot')
 fig, ax = plt.subplots()
-ax.scatter(2,4, s= 200)
+ax.scatter(x_values,y_values, s= 100)
 plt.show()
 
 #задание заголовка диаграммы и меток осей:
