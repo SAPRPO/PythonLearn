@@ -6,14 +6,14 @@ die2 = Die(8)
 
 results = []
 #выборка
-for roll_num in range(10000):
+for roll_num in range(10000): 
     res = die1.roll() + die2.roll()
-    results.append(res)
+    results.append(res) #диапазон 1
 #print(results)
 #частота
 frequencies = []
 max_result = die1.num_sides + die2.num_sides
-poss_results = range(2, max_result+1)
+poss_results = range(2, max_result+1) #Диапазон 2
 
 for value in poss_results:
     freq = results.count(value)
