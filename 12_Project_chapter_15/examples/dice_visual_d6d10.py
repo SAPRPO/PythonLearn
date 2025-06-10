@@ -18,7 +18,7 @@ poss_results = range(2, max_result+1)
 for value in poss_results:
     frequency = results.count(value)
     frequencies.append(frequency)
-
+#test
 #print(frequencies)
 #Визуализация результатов
 title = "Results of Rolling One D6 and D10 50 000 times"
