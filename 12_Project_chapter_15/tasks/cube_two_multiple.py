@@ -13,7 +13,7 @@ for roll_num in range(1000):
     results.append(result)
 
 frequencies = []
-max_result = die1.num_sides +die2.num_sides #+die3.num_sides
+max_result = die1.num_sides + die2.num_sides #+die3.num_sides
 poss_results = range(2,max_result+1)
 
 for value in poss_results:
