@@ -4,7 +4,7 @@ import csv
 import matplotlib.pyplot as plt
 
 #relative filepath
-relative_filepath = '/home/xxx/Work/PythonLearn/13_Project_chapter_16/'
+relative_filepath = '/home/user_deb/Work/PythonLearn/13_Project_chapter_16/'
 #Object path
 path = Path(f"{relative_filepath}/weather_data/sitka_weather_07-2021_simple.csv")
 #take strings
