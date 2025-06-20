@@ -1,10 +1,11 @@
 from pathlib import Path
 import csv
+from datetime import datetime
 
 import matplotlib.pyplot as plt
 
 #relative filepath
-relative_filepath = '/home/user_deb/Work/PythonLearn/13_Project_chapter_16/'
+relative_filepath = '/home/xxx/Work/PythonLearn/13_Project_chapter_16/'
 #Object path
 path = Path(f"{relative_filepath}/weather_data/sitka_weather_07-2021_simple.csv")
 #take strings
@@ -23,9 +24,13 @@ for index, colomn_header in enumerate(header_row): #enumerate return index
 
 #eject and reading data
 
-highs =[]
+dates, highs =[], []
 for row in reader:
+    #add datetime
+    current_date= datetime.strptime(row[2], '%Y-%m-%d')
+    #
     high = int(row[4])
+    dates.append(current_date)
     highs.append(high)
     
 print(highs)
@@ -34,12 +39,13 @@ print(highs)
 #diagram data
 plt.style.use('seaborn') #style
 fig, ax = plt.subplots()
-ax.plot(highs, color='red')
+ax.plot(dates, highs, color='red')
 
 #Format diagram
-ax.set_title('Daily High Temperatures, July 2021, fontsize=24')
+ax.set_title('Daily High Temperatures, July 2021', fontsize=24)
 ax.set_xlabel('', fontsize=16)
 ax.set_ylabel("Temperature (F)", fontsize =16)
+fig.autofmt_xdate() #format datetime
 ax.tick_params(labelsize=16)
 
 plt.show()
