@@ -5,7 +5,8 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 
 #relative filepath
-relative_filepath = '/home/xxx/Work/PythonLearn/13_Project_chapter_16/'
+#relative_filepath = '/home/xxx/Work/PythonLearn/13_Project_chapter_16/' #Ubuntu virtual
+relative_filepath = '/home/ilia/Work/PythonLearn/13_Project_chapter_16/'
 #Object path
 path = Path(f"{relative_filepath}/weather_data/sitka_weather_2021_simple.csv")
 #take strings
@@ -35,7 +36,7 @@ for row in reader:
     highs.append(high)
     lows.append(low)
     
-print(highs)
+#print(highs)
 
 #make diagram    
 #diagram data
