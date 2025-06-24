@@ -4,9 +4,10 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import csv
 
-relative_filepath = '/home/xxx/Work/PythonLearn/13_Project_chapter_16/' #Ubuntu virtual
+#relative_filepath = '/home/xxx/Work/PythonLearn/13_Project_chapter_16/' #Ubuntu virtual
 #relative_filepath = '/home/ilia/Work/PythonLearn/13_Project_chapter_16/'
 #relative_filepath = '/home/user_deb/Work/PythonLearn/13_Project_chapter_16/'
+relative_filepath = '/home/user/Work/PythonLearn/13_Project_chapter_16/'
 
 path = Path(f"{relative_filepath}/tasks/sitka_weather_2021_full.csv")
 
@@ -53,7 +54,7 @@ for m in missing:
 
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
-ax.plot(dates, highs, color ='red')
+ax.plot(dates, highs, color ='green')
 
 ax.set_title('PRCP 2021', fontsize=20)
 ax.set_xlabel('', fontsize=16)
