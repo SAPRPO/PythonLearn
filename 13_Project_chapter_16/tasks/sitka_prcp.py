@@ -6,10 +6,10 @@ import csv
 #username in system
 from whoami import Whoami
 
-user = Whoami.get_user_name()
-relative_filepath = f'/home/{user}/Work/PythonLearn/13_Project_chapter_16/'
-
-path = Path(f"{relative_filepath}/tasks/sitka_weather_2021_full.csv")
+p = Whoami.get_path()
+relative_filepath = f'{p}/13_Project_chapter_16/'
+filename = 'sitka_weather_2021_full.csv'
+path = Path(f"{relative_filepath}/tasks/{filename}")
 print(path)
 Whoami.check_path(path)
 
