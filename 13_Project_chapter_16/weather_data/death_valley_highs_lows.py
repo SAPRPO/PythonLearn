@@ -1,13 +1,18 @@
 from pathlib import Path
 from datetime import datetime
 
+from whoami import Whoami
 import matplotlib.pyplot as plt 
 import csv
 
-#relative_filepath = '/home/xxx/Work/PythonLearn/13_Project_chapter_16/' #Ubuntu virtual
-relative_filepath = '/home/ilia/Work/PythonLearn/13_Project_chapter_16/'
 
-path = Path(f"{relative_filepath}/weather_data/death_valley_2021_simple.csv")
+p = Whoami.get_path()
+relative_filepath = f'{p}/13_Project_chapter_16/'
+filename = 'death_valley_2021_simple.csv'
+path = Path(f"{relative_filepath}/weather_data/{filename}")
+
+Whoami.check_path(path)
+
 lines = path.read_text().splitlines()
 
 reader = csv.reader(lines)
