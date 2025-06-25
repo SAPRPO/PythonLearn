@@ -3,28 +3,24 @@ from datetime import datetime
 
 import matplotlib.pyplot as plt
 import csv
+#username in system
+from whoami import Whoami
 
-#relative_filepath = '/home/xxx/Work/PythonLearn/13_Project_chapter_16/' #Ubuntu virtual
-#relative_filepath = '/home/ilia/Work/PythonLearn/13_Project_chapter_16/'
-#relative_filepath = '/home/user_deb/Work/PythonLearn/13_Project_chapter_16/'
-relative_filepath = '/home/user/Work/PythonLearn/13_Project_chapter_16/'
+user = Whoami.get_user_name()
+relative_filepath = f'/home/{user}/Work/PythonLearn/13_Project_chapter_16/'
 
 path = Path(f"{relative_filepath}/tasks/sitka_weather_2021_full.csv")
-
 print(path)
+Whoami.check_path(path)
 
     
 #разбор файла
-try:
-    lines = path.read_text().splitlines() #рызбиение на строки
-except Exception:
-    print(Exception)
-    quit
-else:
+
+lines = path.read_text().splitlines() #разбиение на строки
 #csv
-    reader = csv.reader(lines)
+reader = csv.reader(lines)
 #header
-    header_row = next(reader)
+header_row = next(reader)
 #print headers
 for index, column_header in enumerate(header_row):
     print(index, column_header) 
