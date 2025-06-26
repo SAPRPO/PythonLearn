@@ -11,7 +11,9 @@ class Whoami:
 
     @staticmethod
     def get_path():
-        p = Path().absolute()
+        p = Path().absolute() 
+        #rp =Path.relative_to()
+        #try relative filepath use 
         return p
 
     @staticmethod
@@ -19,5 +21,5 @@ class Whoami:
         if path.exists():
             print(f"path {path} exists!")
         else:
-            print(f"path {path} not exists!")
+            print(f"path {path} not exists!\nExit program")
             sys.exit()
