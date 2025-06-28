@@ -2,7 +2,7 @@ from pathlib import Path
 from datetime import datetime
 
 import matplotlib.pyplot as plt
-
+#import seaborn as sns
 from whoami import Whoami 
 import csv
 
@@ -83,7 +83,8 @@ test_print(highs_dv)
 #    print(index, column_header) 
 
 #diagram 
-plt.style.use('seaborn')
+#sns.set_theme()
+plt.style.use('classic') #sea
 fig, ax = plt.subplots()
 ax.plot(dates, highs_sitka, color ='blue')
 ax.plot(dates, highs_dv, color ='red')
