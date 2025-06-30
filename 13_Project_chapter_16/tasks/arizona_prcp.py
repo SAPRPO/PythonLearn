@@ -7,9 +7,9 @@ import csv
 from whoami import Whoami
 
 p = Whoami.get_path()
-rlp = f'{p}/13_Project_chapter_16/'
+rlp = f'{p}'
 
-path = Path(f'{rlp}/tasks/4059352.csv')
+path = Path(f'{rlp}/4059352.csv')
 Whoami.check_path(path)
 
 lines = path.read_text().splitlines()
