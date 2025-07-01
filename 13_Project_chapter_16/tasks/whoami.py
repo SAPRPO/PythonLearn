@@ -13,11 +13,15 @@ class Whoami:
 
     @staticmethod
     def get_path(f_name):
+        p = os.getcwd()
+        for dirpath, dirnames, filenames in os.walk(p):            
+            if f_name in filenames:
+                path = os.path.join(dirpath, f_name)
+                print(path)                
+                return path
+            
+        return sys.exit()
 
-        p = Path().absolute() 
-        #Update
-        #try relative filepath use 
-        return p
     
 
     

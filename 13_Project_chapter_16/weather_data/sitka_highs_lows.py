@@ -6,11 +6,11 @@ from whoami import Whoami
 import matplotlib.pyplot as plt
 
 
-p = Whoami.get_path()
-relative_filepath = f'{p}/13_Project_chapter_16/'
-#Object path
-path = Path(f"{relative_filepath}/weather_data/sitka_weather_2021_simple.csv")
-Whoami.check_path(path)
+
+f_name = 'sitka_weather_2021_simple.csv'
+
+path = Path(Whoami.get_path(f_name))
+
 #take strings
 lines = path.read_text().splitlines()
 x= len(lines)

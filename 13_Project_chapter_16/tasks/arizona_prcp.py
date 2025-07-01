@@ -2,16 +2,15 @@ from pathlib import Path
 from datetime import datetime
 
 import matplotlib.pyplot as plt
-import csv, os
+import csv
 
 from whoami import Whoami
+filename = '4059352.csv'
+p_temp = Whoami.get_path(filename)
 
+path = Path(p_temp)
 
-p = os.path.dirname(os.path.realpath(__file__))
-rlp = f'{p}'
-
-path = Path(f'{rlp}/4059352.csv')
-Whoami.check_path(path)
+#Whoami.check_path(path)
 
 lines = path.read_text().splitlines()
 reader = csv.reader(lines)

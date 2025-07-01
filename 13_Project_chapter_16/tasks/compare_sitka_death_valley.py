@@ -6,14 +6,13 @@ import matplotlib.pyplot as plt
 from whoami import Whoami 
 import csv
 
-p = Whoami.get_path()
-relative_filepath = f'{p}/13_Project_chapter_16/'
+filename_1 = 'sitka_weather_2021_full.csv'
+filename_2 = 'death_valley_2021_full.csv'
+p_temp1 = Whoami.get_path(filename_1)
+p_temp2 = Whoami.get_path(filename_2)
 
-path_sitka = Path(f"{relative_filepath}/tasks/sitka_weather_2021_full.csv")
-path_dv = Path(f"{relative_filepath}/tasks/death_valley_2021_full.csv")
-
-Whoami.check_path(path_sitka)
-Whoami.check_path(path_dv)
+path_sitka = Path(p_temp1)
+path_dv = Path(p_temp2)
 
 def get_reader(path):
     lines = path.read_text().splitlines()
