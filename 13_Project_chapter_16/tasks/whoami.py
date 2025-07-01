@@ -1,4 +1,4 @@
-import getpass, sys
+import getpass, sys, os
 from pathlib import Path
 class Whoami:
     def __init__(self):
@@ -9,13 +9,18 @@ class Whoami:
         username = getpass.getuser()
         return username
 
+
+
     @staticmethod
-    def get_path():
+    def get_path(f_name):
+
         p = Path().absolute() 
-        #rp =Path.relative_to()
+        #Update
         #try relative filepath use 
         return p
+    
 
+    
     @staticmethod
     def check_path(path):
         if path.exists():

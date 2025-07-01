@@ -2,11 +2,12 @@ from pathlib import Path
 from datetime import datetime
 
 import matplotlib.pyplot as plt
-import csv
+import csv, os
 
 from whoami import Whoami
 
-p = Whoami.get_path()
+
+p = os.path.dirname(os.path.realpath(__file__))
 rlp = f'{p}'
 
 path = Path(f'{rlp}/4059352.csv')
