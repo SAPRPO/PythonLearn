@@ -19,7 +19,7 @@ def get_reader(path):
     reader = csv.reader(lines)
     return reader
 
-def test_print(highs):
+def print_highs(highs):
     count = 1
     for d in highs[:10]:
         print(f"{count} {d}")
@@ -70,9 +70,9 @@ for row in reader_dv:
         highs_dv.append(high)
         #dates.append(current_date)
 
-test_print(highs_sitka)
+print_highs(highs_sitka)
 print('\n')
-test_print(highs_dv)
+print_highs(highs_dv)
 
 #var1 = len(highs_dv)
 #var2 = len(highs_sitka)
