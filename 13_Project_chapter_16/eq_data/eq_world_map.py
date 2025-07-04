@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 
 import plotly.express as px
+import pandas as pd
 from whoami import Whoami
 
 filename = 'eq_data_1_day_m1.geojson'
@@ -32,9 +33,13 @@ for eq_dict in all_eq_dicts:
     lons.append(lon)
     lats.append(lat)
 
+print(mags[:10])
+print(lons[:10])
+print(lats[:10])
 #diagramm
 
+#df = pd.DataFrame()
 title = 'Global Earthquakes'
-fig = px.scatter_geo(lat=lats, lon=lons, title=title)
+fig = px.scatter_geo( lat=lats, lon=lons, size=mags  ,title=title)
 fig.show()
 
