@@ -41,8 +41,13 @@ def print_highs(highs):
 reader_sitka = get_reader(path_sitka)
 reader_dv= get_reader(path_dv)
 
+
 hrow_sitka = next(reader_sitka)
 hrow_dv = next(reader_dv)
+
+#date_sitka = list(reader_sitka)
+#date_dv = list(reader_dv)
+
 
 #for index, column_header in enumerate(hrow_dv):
 #    print(index, column_header)
@@ -64,10 +69,12 @@ def index_return(header, hrow):
 index_date = index_return('DATE', hrow_sitka) #everything coloumn
 index_tmax_sitka = index_return('TMAX', hrow_sitka)
 index_tmax_dv = index_return('TMAX', hrow_dv)
-
-
+index_station_sitka = index_return('NAME', hrow_sitka )
+index_station_dv = index_return('NAME', hrow_dv)
 dates, highs_sitka, highs_dv = [],[],[]
 #missing =[]
+station_sitka = ''
+station_dv = ''
 
 
 for row in reader_sitka:
@@ -78,8 +85,9 @@ for row in reader_sitka:
         print(f"Value in {hrow_sitka[index_tmax_sitka]} is missing")
     else:
         highs_sitka.append(high)
-
         dates.append(current_date)
+
+
 
 
 
