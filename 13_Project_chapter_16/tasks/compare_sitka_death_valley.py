@@ -1,3 +1,4 @@
+import sys
 from pathlib import Path
 from datetime import datetime
 
@@ -43,19 +44,45 @@ reader_dv= get_reader(path_dv)
 hrow_sitka = next(reader_sitka)
 hrow_dv = next(reader_dv)
 
+#for index, column_header in enumerate(hrow_dv):
+#    print(index, column_header)
+
+def index_return(header, hrow):
+    for index, c_header in enumerate (hrow):
+        if header == c_header:
+            print(f'index {header} = {index}, in')
+            return index
+    print(f"No header {header}!\nCheck values\nProgram interrupted!!!")
+    return sys.exit()
+
+#def get_station_name(c_name, hrow):
+#    for c_name in hrow[:2]:
+ #       print(c_name)
+
+#v = get_station_name('NAME', hrow_sitka)
+
+index_date = index_return('DATE', hrow_sitka) #everything coloumn
+index_tmax_sitka = index_return('TMAX', hrow_sitka)
+index_tmax_dv = index_return('TMAX', hrow_dv)
+
+
 dates, highs_sitka, highs_dv = [],[],[]
 #missing =[]
 
 
 for row in reader_sitka:
-    current_date = datetime.strptime(row[2], "%Y-%m-%d")
+    current_date = datetime.strptime(row[index_date], "%Y-%m-%d")
     try:
-        high = float(row[7])
+        high = float(row[index_tmax_sitka])
     except:
-        print(f"Value in {hrow_sitka[7]} is missing")
+        print(f"Value in {hrow_sitka[index_tmax_sitka]} is missing")
     else:
         highs_sitka.append(high)
+
         dates.append(current_date)
+
+
+
 #print(highs_sitka) 
 
 #test print #use methods for circle for
@@ -63,9 +90,9 @@ for row in reader_sitka:
 for row in reader_dv:
     #current_date = datetime.strptime(row[2], "%Y-%m-%d")
     try:
-        high = float(row[6])
+        high = float(row[index_tmax_dv])
     except:
-        print(f"Value in {hrow_dv[6]} is missing")
+        print(f"Value in {hrow_dv[index_tmax_dv]} is missing")
     else:
         highs_dv.append(high)
         #dates.append(current_date)
@@ -78,8 +105,7 @@ print_highs(highs_dv)
 #var2 = len(highs_sitka)
 
 
-#for index, column_header in enumerate(hrow_dv):
-#    print(index, column_header) 
+
 
 #diagram 
 #sns.set_theme()
