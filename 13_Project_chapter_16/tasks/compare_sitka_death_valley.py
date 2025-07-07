@@ -45,12 +45,6 @@ reader_dv= get_reader(path_dv)
 hrow_sitka = next(reader_sitka)
 hrow_dv = next(reader_dv)
 
-#date_sitka = list(reader_sitka)
-#date_dv = list(reader_dv)
-
-
-#for index, column_header in enumerate(hrow_dv):
-#    print(index, column_header)
 
 def index_return(header, hrow):
     for index, c_header in enumerate (hrow):
@@ -60,22 +54,13 @@ def index_return(header, hrow):
     print(f"No header {header}!\nCheck values\nProgram interrupted!!!")
     return sys.exit()
 
-#def get_station_name(c_name, hrow):
-#    for c_name in hrow[:2]:
- #       print(c_name)
-
-#v = get_station_name('NAME', hrow_sitka)
-
-index_date = index_return('DATE', hrow_sitka) #everything coloumn
+index_date = index_return('DATE', hrow_sitka) #everything colomn
 index_tmax_sitka = index_return('TMAX', hrow_sitka)
 index_tmax_dv = index_return('TMAX', hrow_dv)
 index_station_sitka = index_return('NAME', hrow_sitka )
 index_station_dv = index_return('NAME', hrow_dv)
-dates, highs_sitka, highs_dv = [],[],[]
-#missing =[]
-station_sitka = ''
-station_dv = ''
 
+dates, highs_sitka, highs_dv = [],[],[]
 
 for row in reader_sitka:
     current_date = datetime.strptime(row[index_date], "%Y-%m-%d")
@@ -86,12 +71,6 @@ for row in reader_sitka:
     else:
         highs_sitka.append(high)
         dates.append(current_date)
-
-
-
-
-
-#print(highs_sitka) 
 
 #test print #use methods for circle for
 
@@ -109,11 +88,22 @@ print_highs(highs_sitka)
 print('\n')
 print_highs(highs_dv)
 
-#var1 = len(highs_dv)
-#var2 = len(highs_sitka)
 
 
+#get title
+reader_sitka= get_reader(path_sitka)
+reader_dv =get_reader(path_dv)
+hrow_sitka = next(reader_sitka)
+hrow_dv = next(reader_dv)
 
+def get_cell_value(data_list_reader, index, row_value):
+    return data_list_reader[index][row_value]
+
+reader_sitka_data = list(reader_sitka)
+reader_dv_data = list(reader_dv)
+
+station_sitka = get_cell_value(reader_sitka_data, index_station_sitka, 1)
+station_dv = get_cell_value(reader_dv_data,index_station_dv, 1)
 
 #diagram 
 #sns.set_theme()
@@ -121,7 +111,7 @@ plt.style.use('classic') #sea
 fig, ax = plt.subplots()
 ax.plot(dates, highs_sitka, color ='blue')
 ax.plot(dates, highs_dv, color ='red')
-ax.set_title('Max temperatures in Sitka (blue)\nDeath Valley (red) 2021', fontsize=20)
+ax.set_title(f'Max temperatures in {station_sitka} (blue)\n{station_dv} (red) \n2021', fontsize=10)
 ax.set_xlabel('', fontsize=16)
 ax.set_ylabel("Max temperature F", fontsize =16)
 
