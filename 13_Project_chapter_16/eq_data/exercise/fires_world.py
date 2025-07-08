@@ -2,7 +2,7 @@ from pathlib import Path
 import csv, sys
 from datetime import datetime
 import matplotlib.pyplot as plt
-from sympy.physics.units import current
+#from sympy.physics.units import current
 import plotly.express as px
 from whoami import Whoami
 
@@ -65,8 +65,8 @@ title = 'Global Fires'
 fig = px.scatter_geo(lat=lats, lon=lons, size=brightness, title=title,
                      color = brightness,
                      color_continuous_scale='agsunset',
-                     labels={'color':'Magnitude'},
-                     projection='natural earth',
+                     labels={'color':'Fire'},
+                     projection='natural earth', #orthographic
                      hover_name=acq_date,
                      )
 
