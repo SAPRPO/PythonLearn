@@ -10,7 +10,7 @@ filename = 'world_fires_1_day.csv'
 path = Path(Whoami.get_path(filename))
 
 def get_reader(_path):
-    lines = path.read_text().splitlines()
+    lines = _path.read_text().splitlines()
     _reader = csv.reader(lines)
     return _reader
 
