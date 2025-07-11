@@ -8,3 +8,4 @@
 5. How to check sys.exit() with tests
 6. Тестирование методов?
 7. View popular repositories
+8. Проверить коммит из открытого репозитория
